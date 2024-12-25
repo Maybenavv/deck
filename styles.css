@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css?");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: 1000;
+    padding: 1rem 2rem;
+  }
+  
+  .header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .main-nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  
+  .main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: opacity 0.3s ease;
+  }
+  
+  .main-nav a:hover {
+    opacity: 0.8;
+  }
+  
+  .auth-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .auth-buttons a {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+  
+  .sign-in {
+    color: #ffffff;
+  }
+  
+  .register {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .register:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  /* Mobile Navigation */
+  @media (max-width: 768px) {
+    .main-nav {
+      display: none; /* You might want to add a mobile menu toggle later */
+    }
+    
+    .header-container {
+      padding: 1rem;
+    }
+    
+    .auth-buttons {
+      gap: 0.5rem;
+    }
+    
+    .auth-buttons a {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.8rem;
+    }
+  }
+img {
+  width: 100%;
+  display: block;
+}
+
+body {
+  font-family: "Grotesque";
+  color: #025362;
+}
+
+.parallax__container {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.parallax__container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 5rem;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+.parallax__container img {
+  position: absolute;
+}
+
+.parallax__container h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  font-weight: 900;
+}
+
+.parallax__container .tagline {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: 400;
+  color: #025362;
+  font-family: "Poppins", sans-serif ;
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
+
+.about {
+  min-height: 125vh;
+  background-color: #000000;
+  display: grid;
+  place-content: center;
+}
+
+.image__gallary {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+.image__card {
+  opacity: 0;
+}
+
+.image__card img {
+  border-radius: 1rem;
+}
+
+.details {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 8rem;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.footer__btn {
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.learn__more {
+  font-size: 1rem;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .parallax__container h1 {
+    font-size: 60px;
+  }
+  
+  .parallax__container .tagline {
+    font-size: 18px;
+    top: 62%;
+  }
+  
+  .image__gallary {
+    grid-template-columns: 1fr;
+    padding: 0 2rem;
+  }
+}
