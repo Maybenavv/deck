@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>deck.</title>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="header-container">
+        <a href="/" class="logo">deck.</a>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Solutions</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <a href="#" class="sign-in">Sign in</a>
+          <a href="#" class="register">Register</a>
+        </div>
+      </div>
+    </header>
+
+   <div class="parallax__container">
+      <!--<img src="assets/bg-1.jpg" alt="parallax" />
+      <img id="bg-2" src="assets/bg-2.png" alt="parallax" />-->
+      <h1 id="title">deck.</h1>
+      <p class="tagline">branding and marketing done just right</p>
+     <!-- <img id="bg-3" src="assets/bg-3.png" alt="parallax" />-->
+    </div>
+    
+      <div class="hero" align="center">
+        <main id="app">
+
+    <!--<button>
+        <span class="text">Maga Bite Me</span>
+        <span class="shimmer"></span>
+    </button>-->
+    
+</main>
+      </div>
+
+    <svg class="fixed-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M3 3L21 21M21 21H9M21 21V9" stroke="black" stroke-width="2"/>
+      </svg>
+
+    <section class="content">
+      <h1 class="section-title">What Defines us</h1>
+
+      <div class="white-section">
+        
+        <div class="text-content">
+          <h1>Vision</h1>
+          <p class="fade-in">
+            To redefine the digital landscape with creativity, joy, and innovation, becoming the go-to agency for brands that seek not just success, but a partnership built on trust, excellence, and a shared passion for perfection.
+          </p>
+          <h1>Mission</h1>
+          <p class="fade-in">
+            At deck., we craft stories that connect and strategies that deliver. Our mission is to blend creativity with precision, joy with dedication, and innovation with results. By putting our clients’ goals at the heart of everything we do, we aim to not just meet expectations but exceed them, creating campaigns that are as impactful as they are memorable. Together, we strive to make every partnership a success story, with deck. as the preferred companion for all things digital.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+
+
+
+    <div class="carousel">
+      
+      <div class="list">
+        
+          <div class="item" > 
+          
+            <div class="content">
+                  <div class="name">Content and Copywriting</div>
+                  <div class="des">Words that work wonders!<br> We write to make your audience<br> smile, click, and remember.</div>
+                  <div class="btn">
+                      <button>See More</button>
+                      <button>Subscribe</button>
+                  </div>
+              </div>
+          </div>
+
+          <div class="item">
+          
+              <div class="content">
+                  <div class="name">Campaign Planning</div>
+                  <div class="des">Big ideas and strategic moves <br>for unforgettable campaigns</div>
+                  <div class="btn">
+                      <button>See More</button>
+                      <button>Subscribe</button>
+                  </div>
+              </div>
+
+          </div>
+
+          <div class="item" >
+             
+              <div class="content">
+                  <div class="name">Content Strategy</div>
+                  <div class="des">Think of us as your ultimate content GPS!.</div>
+                  <div class="btn">
+                      <button>See More</button>
+                      <button>Subscribe</button>
+                  </div>
+              </div>
+
+          </div>
+
+          <div class="item">
+          
+              <div class="content">
+                  <div class="name">Website Writing</div>
+                  <div class="des">We craft web content that<br> welcomes, wows, and works as hard as you do.</div>
+                  <div class="btn">
+                      <button>See More</button>
+                      <button>Subscribe</button>
+                  </div>
+              </div>
+
+          </div>
+
+          <div class="item">
+          
+              <div class="content">
+                  <div class="name">Social Media Management</div>
+                  <div class="des">Turning likes into love <br>with scroll-stopping posts and engagement.</div>
+                  <div class="btn">
+                      <button>See More</button>
+                      <button>Subscribe</button>
+                  </div>
+              </div>
+
+          </div>
+
+          <div class="item" style="background-image: url(image/eagel3.jpg);">
+              
+              <div class="content">
+                  <div class="name">New Brand Launch</div>
+                  <div class="des">Building brands that turn heads <br>steal hearts, and own the spotlight.</div>
+                  <div class="btn">
+                      <button>See More</button>
+                      <button>Subscribe</button>
+                  </div>
+              </div>
+
+          </div>
+
+   
+
+      </div>
+
+      <!--next prev button-->
+      <div class="arrows">
+          <button class="prev"><</button>
+          <button class="next">></button>
+      </div>
+
+
+      <!-- time running -->
+      <div class="timeRunning"></div>
+      
+     
+
+  </div>
+  <section class="blog-section">
+    <h1 class="section-titi">BLOGS</h1>
+
+    <div class="container">
+        <div class="blog-grid" id="blogGrid"></div>
+    </div>
+</section>
+
+
+    <script>
+
+const arrow = document.querySelector('.fixed-arrow');
+    const arrowRect = arrow.getBoundingClientRect();
+    const arrowCenterX = arrowRect.left + (arrowRect.width / 2);
+    const arrowCenterY = arrowRect.top + (arrowRect.height / 2);
+
+    document.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+      
+      // Calculate angle between arrow center and cursor
+      const deltaX = mouseX - arrowCenterX;
+      const deltaY = mouseY - arrowCenterY;
+      const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+      
+      // Rotate arrow to point at cursor
+      arrow.style.transform = `rotate(${angle + -27 }deg)`;  // Add 45 degrees because our arrow SVG is diagonal
+    });
+      var title = document.getElementById("title");
+      var bg_2 = document.getElementById("bg-2");
+      var bg_3 = document.getElementById("bg-3");
+      var tagline = document.querySelector('.parallax__container .tagline');
+
+      var image_card_1 = document.getElementById("image__card-1");
+      var image_card_2 = document.getElementById("image__card-2");
+      var image_card_3 = document.getElementById("image__card-3");
+      var image_card_4 = document.getElementById("image__card-4");
+
+      document.addEventListener("scroll", (event) => {
+        var positionY = window.scrollY;
+
+        title.style.fontSize = `${100 + positionY * 0.5}px`;
+        tagline.style.opacity = 1 - positionY * 0.003;
+
+        bg_2.style.top = `-${positionY * 0.5}px`;
+        bg_3.style.top = `-${positionY}px`;
+        bg_3.style.scale = 1 + positionY * 0.001;
+
+        image_card_1.style.transform = `translateY(${
+          positionY * -0.5 + 400
+        }px)`;
+
+        image_card_2.style.transform = `translateY(${positionY * 0.1 + -50}px)`;
+
+        image_card_3.style.transform = `translateY(${
+          positionY * -0.1 + 100
+        }px)`;
+
+        image_card_4.style.transform = `translateY(${
+          positionY * 0.2 + -125
+        }px)`;
+
+        var _newOpacity = positionY * 0.001;
+        if (_newOpacity >= 0 && _newOpacity <= 1) {
+          image_card_1.style.opacity = _newOpacity;
+          image_card_2.style.opacity = _newOpacity;
+          image_card_3.style.opacity = _newOpacity;
+          image_card_4.style.opacity = _newOpacity;
+        }
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+  const fadeInElements = document.querySelectorAll(".fade-in");
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      } else {
+        entry.target.classList.remove("visible"); // Remove class for repeated effect
+      }
+    });
+  });
+
+  fadeInElements.forEach(el => observer.observe(el));
+});
+
+     
+var nextBtn = document.querySelector('.next'),
+    prevBtn = document.querySelector('.prev'),
+    carousel = document.querySelector('.carousel'),
+    list = document.querySelector('.list'), 
+    item = document.querySelectorAll('.item'),
+    runningTime = document.querySelector('.carousel .timeRunning') 
+
+let timeRunning = 3000 
+let timeAutoNext = 7000
+
+nextBtn.onclick = function(){
+    showSlider('next')
+}
+
+prevBtn.onclick = function(){
+    showSlider('prev')
+}
+
+let runTimeOut 
+
+let runNextAuto = setTimeout(() => {
+    nextBtn.click()
+}, timeAutoNext)
+
+
+function resetTimeAnimation() {
+    runningTime.style.animation = 'none'
+    runningTime.offsetHeight /* trigger reflow */
+    runningTime.style.animation = null 
+    runningTime.style.animation = 'runningTime 7s linear 1 forwards'
+}
+
+
+function showSlider(type) {
+    let sliderItemsDom = list.querySelectorAll('.carousel .list .item')
+    if(type === 'next'){
+        list.appendChild(sliderItemsDom[0])
+        carousel.classList.add('next')
+    } else{
+        list.prepend(sliderItemsDom[sliderItemsDom.length - 1])
+        carousel.classList.add('prev')
+    }
+
+    clearTimeout(runTimeOut)
+
+    runTimeOut = setTimeout( () => {
+        carousel.classList.remove('next')
+        carousel.classList.remove('prev')
+    }, timeRunning)
+
+
+    clearTimeout(runNextAuto)
+    runNextAuto = setTimeout(() => {
+        nextBtn.click()
+    }, timeAutoNext)
+
+    resetTimeAnimation() // Reset the running time animation
+}
+
+// Start the initial animation 
+resetTimeAnimation()
+
+const blogs = [
+            {
+                title: "All About Product Redesign: In and Out",
+                summary: "Explore the comprehensive guide to product redesign, covering everything from initial research to final implementation. Learn about user-centered approaches and effective redesign strategies.",
+                link: "https://f1studioz.com/blog/all-about-product-redesign-in-and-out/",
+                readTime: "5 min read"
+            },
+            {
+                title: "Game Changers of 2022",
+                summary: "Discover the revolutionary changes and innovations that shaped the design industry in 2022. From AI-powered tools to sustainability-focused approaches.",
+                link: "https://f1studioz.com/blog/game-changers-of-2022/",
+                readTime: "4 min read"
+            },
+            {
+                title: "Remote Work & Mental Health",
+                summary: "An in-depth look at the intersection of remote work and mental well-being, offering insights and strategies for maintaining a healthy work-life balance.",
+                link: "https://f1studioz.com/blog/remote-work-mental-health/",
+                readTime: "6 min read"
+            },
+            {
+                title: "Designing Market Marketing Designs",
+                summary: "Uncover the principles and practices behind creating effective marketing designs that resonate with your target audience and drive engagement.",
+                link: "https://f1studioz.com/blog/designing-market-marketing-designs/",
+                readTime: "4 min read"
+            },
+            {
+                title: "World Design Capital 2022: Valencia",
+                summary: "Experience the creative spirit of Valencia as the World Design Capital 2022, showcasing innovative designs and cultural influences.",
+                link: "https://f1studioz.com/blog/world-design-capital-2022-valencia/",
+                readTime: "5 min read"
+            },
+            {
+                title: "Cinema and Society",
+                summary: "Analyze the profound impact of cinema on society and how it shapes our cultural narratives, perspectives, and social dynamics.",
+                link: "https://f1studioz.com/blog/cinema-and-society-2/",
+                readTime: "7 min read"
+            }
+        ];
+
+        function createBlogCard(blog) {
+            return `
+                <div class="card">
+                    <div class="card-content">
+                        <h2 class="card-title">${blog.title}</h2>
+                        <div class="read-time">${blog.readTime}</div>
+                        <p class="card-summary">${blog.summary}</p>
+                        <a href="${blog.link}" class="cta-button">
+                            Read More
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderBlogCards() {
+            const blogGrid = document.getElementById('blogGrid');
+            blogGrid.innerHTML = blogs.map(blog => createBlogCard(blog)).join('');
+        }
+
+        // Render the blog cards when the page loads
+        document.addEventListener('DOMContentLoaded', renderBlogCards);
+    </script>
+  </body>
+</html> 
