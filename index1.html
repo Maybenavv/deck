@@ -27,10 +27,9 @@
         </div>
       </div>
     </header>
-
    <div class="parallax__container">
-      <!--<img src="assets/bg-1.jpg" alt="parallax" />
-      <img id="bg-2" src="assets/bg-2.png" alt="parallax" />-->
+      <img src="assets/planet.jpg" alt="parallax" />
+     <!--- <img id="bg-2" src="assets/bg-2.png" alt="parallax" />-->
       <h1 id="title">deck.</h1>
       <p class="tagline">branding and marketing done just right</p>
      <!-- <img id="bg-3" src="assets/bg-3.png" alt="parallax" />-->
@@ -38,7 +37,6 @@
     
       <div class="hero" align="center">
         <main id="app">
-
     <!--<button>
         <span class="text">Maga Bite Me</span>
         <span class="shimmer"></span>
@@ -46,13 +44,14 @@
     
 </main>
       </div>
-
+   
     <svg class="fixed-arrow" viewBox="0 0 24 24" fill="none">
         <path d="M3 3L21 21M21 21H9M21 21V9" stroke="black" stroke-width="2"/>
       </svg>
-
     <section class="content">
+      <h1 class="section-title">What Defines us</h1>
       <div class="white-section">
+        
         <div class="text-content">
           <h1>Vision</h1>
           <p class="fade-in">
@@ -65,16 +64,10 @@
         </div>
       </div>
     </section>
-    
 
-
-
-    <div class="carousel">
-
-      <div class="list">
-
+    <div class="carousel" >
+      <div class="list" >
           <div class="item" > 
-          
             <div class="content">
                   <div class="name">Content and Copywriting</div>
                   <div class="des">Words that work wonders!<br> We write to make your audience<br> smile, click, and remember.</div>
@@ -84,9 +77,8 @@
                   </div>
               </div>
           </div>
-
           <div class="item">
-          
+           
               <div class="content">
                   <div class="name">Campaign Planning</div>
                   <div class="des">Big ideas and strategic moves <br>for unforgettable campaigns</div>
@@ -95,9 +87,7 @@
                       <button>Subscribe</button>
                   </div>
               </div>
-
           </div>
-
           <div class="item" >
              
               <div class="content">
@@ -108,9 +98,7 @@
                       <button>Subscribe</button>
                   </div>
               </div>
-
           </div>
-
           <div class="item">
           
               <div class="content">
@@ -121,9 +109,7 @@
                       <button>Subscribe</button>
                   </div>
               </div>
-
           </div>
-
           <div class="item">
           
               <div class="content">
@@ -134,10 +120,8 @@
                       <button>Subscribe</button>
                   </div>
               </div>
-
           </div>
-
-          <div class="item" style="background-image: url(image/eagel3.jpg);">
+          <div class="item">
               
               <div class="content">
                   <div class="name">New Brand Launch</div>
@@ -147,40 +131,30 @@
                       <button>Subscribe</button>
                   </div>
               </div>
-
           </div>
-
    
-
       </div>
-
       <!--next prev button-->
       <div class="arrows">
           <button class="prev"><</button>
           <button class="next">></button>
       </div>
-
-
       <!-- time running -->
       <div class="timeRunning"></div>
       
      
-
   </div>
   <section class="blog-section">
+    <h1 class="section-titi">BLOGS</h1>
     <div class="container">
         <div class="blog-grid" id="blogGrid"></div>
     </div>
 </section>
-
-
     <script>
-
 const arrow = document.querySelector('.fixed-arrow');
     const arrowRect = arrow.getBoundingClientRect();
     const arrowCenterX = arrowRect.left + (arrowRect.width / 2);
     const arrowCenterY = arrowRect.top + (arrowRect.height / 2);
-
     document.addEventListener('mousemove', (e) => {
       const mouseX = e.clientX;
       const mouseY = e.clientY;
@@ -197,36 +171,27 @@ const arrow = document.querySelector('.fixed-arrow');
       var bg_2 = document.getElementById("bg-2");
       var bg_3 = document.getElementById("bg-3");
       var tagline = document.querySelector('.parallax__container .tagline');
-
       var image_card_1 = document.getElementById("image__card-1");
       var image_card_2 = document.getElementById("image__card-2");
       var image_card_3 = document.getElementById("image__card-3");
       var image_card_4 = document.getElementById("image__card-4");
-
       document.addEventListener("scroll", (event) => {
         var positionY = window.scrollY;
-
         title.style.fontSize = `${100 + positionY * 0.5}px`;
         tagline.style.opacity = 1 - positionY * 0.003;
-
         bg_2.style.top = `-${positionY * 0.5}px`;
         bg_3.style.top = `-${positionY}px`;
         bg_3.style.scale = 1 + positionY * 0.001;
-
         image_card_1.style.transform = `translateY(${
           positionY * -0.5 + 400
         }px)`;
-
         image_card_2.style.transform = `translateY(${positionY * 0.1 + -50}px)`;
-
         image_card_3.style.transform = `translateY(${
           positionY * -0.1 + 100
         }px)`;
-
         image_card_4.style.transform = `translateY(${
           positionY * 0.2 + -125
         }px)`;
-
         var _newOpacity = positionY * 0.001;
         if (_newOpacity >= 0 && _newOpacity <= 1) {
           image_card_1.style.opacity = _newOpacity;
@@ -237,7 +202,6 @@ const arrow = document.querySelector('.fixed-arrow');
       });
       document.addEventListener("DOMContentLoaded", () => {
   const fadeInElements = document.querySelectorAll(".fade-in");
-
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -247,10 +211,8 @@ const arrow = document.querySelector('.fixed-arrow');
       }
     });
   });
-
   fadeInElements.forEach(el => observer.observe(el));
 });
-
      
 var nextBtn = document.querySelector('.next'),
     prevBtn = document.querySelector('.prev'),
@@ -258,33 +220,24 @@ var nextBtn = document.querySelector('.next'),
     list = document.querySelector('.list'), 
     item = document.querySelectorAll('.item'),
     runningTime = document.querySelector('.carousel .timeRunning') 
-
 let timeRunning = 3000 
 let timeAutoNext = 7000
-
 nextBtn.onclick = function(){
     showSlider('next')
 }
-
 prevBtn.onclick = function(){
     showSlider('prev')
 }
-
 let runTimeOut 
-
 let runNextAuto = setTimeout(() => {
     nextBtn.click()
 }, timeAutoNext)
-
-
 function resetTimeAnimation() {
     runningTime.style.animation = 'none'
     runningTime.offsetHeight /* trigger reflow */
     runningTime.style.animation = null 
     runningTime.style.animation = 'runningTime 7s linear 1 forwards'
 }
-
-
 function showSlider(type) {
     let sliderItemsDom = list.querySelectorAll('.carousel .list .item')
     if(type === 'next'){
@@ -294,26 +247,19 @@ function showSlider(type) {
         list.prepend(sliderItemsDom[sliderItemsDom.length - 1])
         carousel.classList.add('prev')
     }
-
     clearTimeout(runTimeOut)
-
     runTimeOut = setTimeout( () => {
         carousel.classList.remove('next')
         carousel.classList.remove('prev')
     }, timeRunning)
-
-
     clearTimeout(runNextAuto)
     runNextAuto = setTimeout(() => {
         nextBtn.click()
     }, timeAutoNext)
-
     resetTimeAnimation() // Reset the running time animation
 }
-
 // Start the initial animation 
 resetTimeAnimation()
-
 const blogs = [
             {
                 title: "All About Product Redesign: In and Out",
@@ -352,7 +298,6 @@ const blogs = [
                 readTime: "7 min read"
             }
         ];
-
         function createBlogCard(blog) {
             return `
                 <div class="card">
@@ -370,14 +315,12 @@ const blogs = [
                 </div>
             `;
         }
-
         function renderBlogCards() {
             const blogGrid = document.getElementById('blogGrid');
             blogGrid.innerHTML = blogs.map(blog => createBlogCard(blog)).join('');
         }
-
         // Render the blog cards when the page loads
         document.addEventListener('DOMContentLoaded', renderBlogCards);
     </script>
   </body>
-</html> 
+  </html>
